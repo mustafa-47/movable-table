@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طاولة لابتوب متحركة - الحل الأمثل للعمل المريح في الجزائر</title>
+    <style>
+        :root {
+            --primary: #2a5bd7;
+            --secondary: #f8f9fa;
+            --accent: #ff6b35;
+            --dark: #212529;
+            --light: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: var(--secondary);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+        
+        .price {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--accent);
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #777;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .cta-button:hover {
+            background-color: #e05a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.3);
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--secondary);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .feature-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        /* Gallery */
+        .gallery {
+            padding: 80px 0;
+            background-color: var(--secondary);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--secondary);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #1a4ab9 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button.white {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        .cta-button.white:hover {
+            background-color: #e6e6e6;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #495057;
+            color: #adb5bd;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .subtitle {
+                font-size: 18px;
+            }
+        }
+        
+        /* Timer */
+        .offer-timer {
+            background-color: #fff4f0;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .timer-text {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .timer-numbers {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .timer-unit {
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 100;
+        }
+        
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .whatsapp-button i {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* Form Styles */
+        #order-form input,
+        #order-form select,
+        #order-form textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+        
+        #form-message {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            display: none;
+        }
+        
+        #loading {
+            display: none;
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+            }
+            
+            .whatsapp-button {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- زر واتساب عائم -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/213697596384?text=مرحباً، أريد طلب طاولة لابتوب متحركة" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i> واتساب
+        </a>
+    </div>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">طاولتي المتحركة</div>
+            <a href="#order" class="cta-button">اطلب الآن</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="offer-timer">
+                    <div class="timer-text">العرض ينتهي خلال:</div>
+                    <div class="timer-numbers">
+                        <span class="timer-unit" id="hours">02</span>
+                        <span class="timer-unit" id="minutes">45</span>
+                        <span class="timer-unit" id="seconds">30</span>
+                    </div>
+                </div>
+                
+                <h1>طاولتك المتحركة الشخصية.. العمل بذكاء وراحة لم تعرفها من قبل!</h1>
+                <p class="subtitle">صممت خصيصًا لعشاق الراحة والتنظيم، تمنحك حرية العمل من أي مكان في المنزل بسهولة</p>
+                
+                <div class="price">
+                    <span class="old-price">6000 د.ج</span>
+                    4500 د.ج فقط
+                </div>
+                
+                <a href="#order" class="cta-button">احصل عليها الآن <i class="fas fa-arrow-left"></i></a>
+                
+                <div style="margin-top: 20px; display: flex; align-items: center; gap: 15px;">
+                    <div style="display: flex;">
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                    </div>
+                    <span>+120 عميل راضٍ في الجزائر</span>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://ae01.alicdn.com/kf/S1d4e1a8a9b3e4e7a8d1a3a3a3a3a3a3a/Portable-Laptop-Table-Adjustable-Height-Tilt-Stand-for-Bed-Sofa-Floor-Use-with-Cup-Holder-Book.jpg" alt="طاولة لابتوب متحركة">
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">لماذا تختار طاولتنا المتحركة؟</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-arrows-alt"></i>
+                    </div>
+                    <h3 class="feature-title">سهلة الحركة</h3>
+                    <p>تناسب السرير، الأريكة، أو حتى الأرضية. خفيفة الوزن وسهلة النقل بين الغرف</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3 class="feature-title">قابلة للتعديل</h3>
+                    <p>تعديل الارتفاع (من 20سم إلى 40سم) وزاوية الميل (0° إلى 45°) بسهولة</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="feature-title">مساحة مدمجة</h3>
+                    <p>تصميم ذكي يحمل اللابتوب حتى 17 بوصة + الفأرة + كوب القهوة</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">مواد عالية الجودة</h3>
+                    <p>مصنوعة من خشب MDF متين وخفيف الوزن (2.5 كغ فقط) مع حوامل معدنية قوية</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">تركيب سريع</h3>
+                    <p>لا تحتاج لأي أدوات، يمكنك تركيبها في دقائق معدودة</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="feature-title">ضمان سنتين</h3>
+                    <p>ضمان لمدة سنتين ضد عيوب الصنعة مع خدمة صيانة محلية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">شاهد طاولتك المتحركة عن قرب</h2>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://ae01.alicdn.com/kf/S1d4e1a8a9b3e4e7a8d1a3a3a3a3a3a3a/Portable-Laptop-Table-Adjustable-Height-Tilt-Stand-for-Bed-Sofa-Floor-Use-with-Cup-Holder-Book.jpg" alt="طاولة لابتوب">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ae01.alicdn.com/kf/S1d4e1a8a9b3e4e7a8d1a3a3a3a3a3a3a/Portable-Laptop-Table-Adjustable-Height-Tilt-Stand-for-Bed-Sofa-Floor-Use-with-Cup-Holder-Book.jpg_350x350.jpg" alt="طاولة لابتوب على السرير">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ae01.alicdn.com/kf/S1d4e1a8a9b3e4e7a8d1a3a3a3a3a3a3a/Portable-Laptop-Table-Adjustable-Height-Tilt-Stand-for-Bed-Sofa-Floor-Use-with-Cup-Holder-Book.jpg_350x350.jpg" alt="طاولة لابتوب متعددة الزوايا">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ae01.alicdn.com/kf/S1d4e1a8a9b3e4e7a8d1a3a3a3a3a3a3a/Portable-Laptop-Table-Adjustable-Height-Tilt-Stand-for-Bed-Sofa-Floor-Use-with-Cup-Holder-Book.jpg_350x350.jpg" alt="طاولة لابتوب مع اكسسوارات">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">آراء عملائنا في الجزائر</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "اشتريت الطاولة قبل 3 أشهر وهي تغير طريقة عملي تماماً! الآن أستطيع العمل من أي مكان في المنزل دون تعب. التوصيل كان سريعاً عبر شركة DHL."
+                    </div>
+                    <div class="testimonial-author">- أحمد من الجزائر العاصمة</div>
+                    <div class="stars">
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "كنت أعاني من آلام الظهر بسبب الجلوس الخاطئ. هذه الطاولة ساعدتني على تعديل وضعية جلوسي. الشحن وصل إلى وهران في يومين فقط!"
+                    </div>
+                    <div class="testimonial-author">- سارة من وهران</div>
+                    <div class="stars">
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star-half-alt" style="color: #ffc107;"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "المنتج يتجاوز التوقعات! الخامة قوية وسهلة التنظيف. أنصح بها لكل طلاب الجامعات في الجزائر الذين يعملون من المنزل."
+                    </div>
+                    <div class="testimonial-author">- خالد من قسنطينة</div>
+                    <div class="stars">
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                        <i class="fas fa-star" style="color: #ffc107;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section" id="order">
+        <div class="container">
+            <h2>جاهز لتجربة الراحة الحقيقية؟</h2>
+            <p>اطلب طاولتك المتحركة الآن واحصل على توصيل سريع لكل ولايات الجزائر</p>
+            
+            <div style="max-width: 500px; margin: 40px auto; background-color: white; padding: 30px; border-radius: 10px; color: var(--dark);">
+                <h3 style="margin-bottom: 20px; text-align: center;">اكمل طلبك الآن</h3>
+                
+                <!-- خيار الطلب عبر الواتساب -->
+                <a href="https://wa.me/213697596384?text=مرحباً، أريد طلب طاولة لابتوب متحركة" 
+                   class="whatsapp-button" 
+                   target="_blank"
+                   style="display: block; text-align: center; margin-bottom: 20px;">
+                    <i class="fab fa-whatsapp"></i> الطلب عبر واتساب
+                </a>
+                
+                <div style="text-align: center; margin: 15px 0; color: #666; font-size: 14px;">
+                    أو املأ النموذج التالي:
+                </div>
+                
+                <!-- استمارة الطلب المعدلة -->
+                <form id="order-form" style="display: grid; gap: 15px;">
+                    <input type="text" id="fullname" placeholder="الاسم الكامل" required>
+                    <input type="tel" id="phone" placeholder="رقم الجوال" required>
+                    <select id="state" required>
+                        <option value="">اختر الولاية</option>
+                        <option value="algiers">الجزائر العاصمة</option>
+                        <option value="oran">وهران</option>
+                        <option value="constantine">قسنطينة</option>
+                        <option value="annaba">عنابة</option>
+                        <option value="blida">البليدة</option>
+                    </select>
+                    <textarea id="address" placeholder="العنوان بالتفصيل" style="min-height: 80px;"></textarea>
+                    
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <input type="checkbox" id="agree" required style="width: auto;">
+                        <label for="agree">أوافق على شروط الاستخدام وسياسة الخصوصية</label>
+                    </div>
+                    
+                    <div id="loading">
+                        <i class="fas fa-spinner fa-spin"></i> جاري معالجة طلبك...
+                    </div>
+                    
+                    <button type="submit" class="cta-button" style="width: 100%; margin-top: 10px;">أكمل الطلب</button>
+                </form>
+                
+                <div id="form-message"></div>
+            </div>
+        </div>
+    </section>
+    
+    <section style="padding: 40px 0; background-color: var(--secondary);">
+        <div class="container">
+            <div style="background-color: white; padding: 30px; border-radius: 10px; text-align: center;">
+                <h3 style="margin-bottom: 20px;">الأسئلة الشائعة</h3>
+                
+                <div style="max-width: 800px; margin: 0 auto; text-align: right;">
+                    <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                        <div style="font-weight: 700; margin-bottom: 5px;">ما هي مدة التوصيل في الجزائر؟</div>
+                        <div>التوصيل خلال 2-3 أيام عمل في العاصمة وهران وقسنطينة، وباقي الولايات من 3-5 أيام عمل</div>
+                    </div>
+                    
+                    <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                        <div style="font-weight: 700; margin-bottom: 5px;">هل الدفع عند الاستلام متاح؟</div>
+                        <div>نعم، يمكنك الدفع عند استلام الطاولة في جميع ولايات الجزائر</div>
+                    </div>
+                    
+                    <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                        <div style="font-weight: 700; margin-bottom: 5px;">ما هي تكلفة الشحن؟</div>
+                        <div>الشحن مجاني لجميع الطلبات فوق 5000 د.ج. للطلبات الأقل، تكلفة الشحن 500 د.ج</div>
+                    </div>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <div style="font-weight: 700; margin-bottom: 5px;">هل يمكن إرجاع المنتج؟</div>
+                        <div>نعم، لديك 7 أيام لإرجاع المنتج واسترداد المبلغ كاملًا إذا لم يعجبك</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>طاولتي المتحركة</h3>
+                    <p style="color: #adb5bd; margin-top: 15px;">الحل الأمثل للعمل المريح من المنزل في الجزائر. نوفر منتجات عالية الجودة بأسعار تنافسية.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#">الصفحة الرئيسية</a></li>
+                        <li><a href="#">مميزات المنتج</a></li>
+                        <li><a href="#">آراء العملاء</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>خدمة العملاء</h3>
+                    <ul>
+                        <li><a href="#">اتصل بنا</a></li>
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">شروط الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>تواصل معنا</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-phone" style="margin-left: 5px;"></i> 0697596384</a></li>
+                        <li><a href="#"><i class="fas fa-envelope" style="margin-left: 5px;"></i> contact@movable-desk.dz</a></li>
+                        <li style="display: flex; gap: 10px; margin-top: 15px;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 طاولتي المتحركة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Timer countdown
+        function updateTimer() {
+            const now = new Date();
+            const endTime = new Date();
+            endTime.setHours(now.getHours() + 2);
+            endTime.setMinutes(45);
+            endTime.setSeconds(30);
+            
+            const diff = endTime - now;
+            
+            if (diff <= 0) {
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateTimer, 1000);
+        updateTimer();
+        
+        // Form submission to Google Sheets
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // تعطيل الزر أثناء المعالجة
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'جاري الإرسال...';
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('form-message').style.display = 'none';
+            
+            // جمع بيانات النموذج
+            const formData = {
+                name: document.getElementById('fullname').value,
+                phone: document.getElementById('phone').value,
+                state: document.getElementById('state').value,
+                address: document.getElementById('address').value,
+                timestamp: new Date().toLocaleString()
+            };
+            
+            // استبدل هذا الرابط برابط النشر الخاص بك من Google Apps Script
+            const scriptUrl = 'https://script.google.com/macros/s/XXXXXXXXXXXXXXXX/exec';
+            
+            // إرسال البيانات إلى Google Sheets
+            fetch(scriptUrl, {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('form-message').textContent = 'تم إرسال طلبك بنجاح! سنتصل بك قريباً.';
+                document.getElementById('form-message').style.color = 'green';
+                document.getElementById('form-message').style.display = 'block';
+                document.getElementById('order-form').reset();
+            })
+            .catch(error => {
+                document.getElementById('form-message').textContent = 'حدث خطأ! يرجى المحاولة مرة أخرى أو التواصل عبر واتساب.';
+                document.getElementById('form-message').style.color = 'red';
+                document.getElementById('form-message').style.display = 'block';
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'أكمل الطلب';
+                document.getElementById('loading').style.display = 'none';
+                
+                // إخفاء الرسالة بعد 5 ثواني
+                setTimeout(() => {
+                    document.getElementById('form-message').style.display = 'none';
+                }, 5000);
+            });
+        });
+        
+        // Show/hide WhatsApp button on scroll
+        window.addEventListener('scroll', function() {
+            const whatsappButton = document.querySelector('.whatsapp-float');
+            if (window.scrollY > 300) {
+                whatsappButton.style.display = 'block';
+            } else {
+                whatsappButton.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
